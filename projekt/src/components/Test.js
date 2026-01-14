@@ -3,7 +3,8 @@ import "./Test.css";
 const Test = () => {
   return (
     <>
-      <p className="novaKlasa">Hello World</p>
+      <p className="danger">Hello World</p>
+      <>Nesto novo</>
     </>
   );
 };
