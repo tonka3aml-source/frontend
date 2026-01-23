@@ -28,6 +28,8 @@ const Nav = () => {
         </li>
         <li className="nav-item"><Link className="nav-link" to="/kosarica">🛒Košarica</Link>
         </li>
+        <li className="nav-item"><Link className="nav-link" to="/kontakt">Kontakt</Link>
+        </li>
       </ul>
     </div>
   </div>
