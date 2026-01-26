@@ -1,0 +1,145 @@
+[
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Australija",
+    "drzava_iso": "AUS",
+    "kupovni_tecaj": "1,713000",
+    "prodajni_tecaj": "1,707800",
+    "sifra_valute": "036",
+    "srednji_tecaj": "1,710400",
+    "valuta": "AUD"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Kanada",
+    "drzava_iso": "CAN",
+    "kupovni_tecaj": "1,618500",
+    "prodajni_tecaj": "1,613700",
+    "sifra_valute": "124",
+    "srednji_tecaj": "1,616100",
+    "valuta": "CAD"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Češka",
+    "drzava_iso": "CZE",
+    "kupovni_tecaj": "24,293000",
+    "prodajni_tecaj": "24,221000",
+    "sifra_valute": "203",
+    "srednji_tecaj": "24,257000",
+    "valuta": "CZK"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Danska",
+    "drzava_iso": "DNK",
+    "kupovni_tecaj": "7,479800",
+    "prodajni_tecaj": "7,457400",
+    "sifra_valute": "208",
+    "srednji_tecaj": "7,468600",
+    "valuta": "DKK"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Mađarska",
+    "drzava_iso": "HUN",
+    "kupovni_tecaj": "382,720000",
+    "prodajni_tecaj": "381,580000",
+    "sifra_valute": "348",
+    "srednji_tecaj": "382,150000",
+    "valuta": "HUF"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Japan",
+    "drzava_iso": "JPN",
+    "kupovni_tecaj": "185,990000",
+    "prodajni_tecaj": "185,430000",
+    "sifra_valute": "392",
+    "srednji_tecaj": "185,710000",
+    "valuta": "JPY"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Norveška",
+    "drzava_iso": "NOR",
+    "kupovni_tecaj": "11,559300",
+    "prodajni_tecaj": "11,524700",
+    "sifra_valute": "578",
+    "srednji_tecaj": "11,542000",
+    "valuta": "NOK"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Švedska",
+    "drzava_iso": "SWE",
+    "kupovni_tecaj": "10,586400",
+    "prodajni_tecaj": "10,554600",
+    "sifra_valute": "752",
+    "srednji_tecaj": "10,570500",
+    "valuta": "SEK"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Švicarska",
+    "drzava_iso": "CHE",
+    "kupovni_tecaj": "0,929100",
+    "prodajni_tecaj": "0,926300",
+    "sifra_valute": "756",
+    "srednji_tecaj": "0,927700",
+    "valuta": "CHF"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Velika Britanija",
+    "drzava_iso": "GBR",
+    "kupovni_tecaj": "0,869400",
+    "prodajni_tecaj": "0,866800",
+    "sifra_valute": "826",
+    "srednji_tecaj": "0,868100",
+    "valuta": "GBP"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "SAD",
+    "drzava_iso": "USA",
+    "kupovni_tecaj": "1,176000",
+    "prodajni_tecaj": "1,172400",
+    "sifra_valute": "840",
+    "srednji_tecaj": "1,174200",
+    "valuta": "USD"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Bosna i Hercegovina",
+    "drzava_iso": "BIH",
+    "kupovni_tecaj": "1,958760",
+    "prodajni_tecaj": "1,952900",
+    "sifra_valute": "977",
+    "srednji_tecaj": "1,955830",
+    "valuta": "BAM"
+  },
+  {
+    "broj_tecajnice": "17",
+    "datum_primjene": "2026-01-26",
+    "drzava": "Poljska",
+    "drzava_iso": "POL",
+    "kupovni_tecaj": "4,209800",
+    "prodajni_tecaj": "4,197200",
+    "sifra_valute": "985",
+    "srednji_tecaj": "4,203500",
+    "valuta": "PLN"
+  }
+]

@@ -1,3 +1,4 @@
+import './Blog.css';
 import posts from "../components/zadaci/data/blog.json";
 
 const Blog = () => {
@@ -7,7 +8,7 @@ const Blog = () => {
         <h1>Blog</h1>
         <div className="row">
           {posts.map((post) => (
-            <div className="col-md-4 mb-4">
+            <div className="col-md-4 mb-4 blog-post">
 
           <img src={post._embedded['wp:featuredmedia']
           [0].media_details.sizes.full.source_url} />
@@ -16,8 +17,14 @@ const Blog = () => {
               <div
                 dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
               ></div>
-              <p>{post._embedded.author[0].name}</p>
-                  
+              <p>{post._embedded.author[0].name} | {new Date(post.date).toLocaleString('hr-HR', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                })}</p>
+                                 
             </div>
           ))}
         </div>

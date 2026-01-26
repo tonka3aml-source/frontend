@@ -14,6 +14,7 @@ import Kontakt from"./pages/Kontakt";
 
 import Profil from "./components/zadaci/Profil";
 import Korisnici from "./components/zadaci/Korisnici";
+import Tecaj from "./components/zadaci/Tecaj";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
       <Route path="/profil" element= {<Profil />} />
       <Route path="/korisnici" element= {<Korisnici />} />
+      <Route path="/tecaj" element= {<Tecaj />} />
 
 
 
