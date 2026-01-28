@@ -1,3 +1,4 @@
+import Loader from "../pages/Loader";
 
 const Kosarica = () => {
   return (

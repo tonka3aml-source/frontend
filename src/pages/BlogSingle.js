@@ -1,9 +1,32 @@
 import "./Blog.css";
 import post from "../components/zadaci/data/blogsingle.json";
+import Loader from "../pages/Loader";
+import {useParams} from "react-router-dom";
+import {useEffect, useState } from "react";
 
-console.log(post);
 
 const BlogSingle = () => {
+
+//prvo hvatamo slug sa kukom useParams
+//zatim u useEffectu radimo fetch za pojedinacni post koristeci taj slug
+//spremamo post u stanje
+//prikazujemo post  
+
+const {slug} = useParams();
+const [post, setPost] = useState(null);    //dohvačamo postove i stavljamo null kao početno stanje
+
+useEffect(() => {
+  fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/posts?slug=${slug}&_embed`)
+    .then((response) => response.json())
+    .then((data) => setPost(data[0]));    // 0 se stavlja kao pozicija niza koji vraća API
+}, [slug]);   //ovisnost je slug, kad se on promjeni, pozovi useEffect opet
+
+if (!post) {
+  return <Loader />;   //ako post nije učitan, prikazi Loader
+}
+
+
+
   return (
     <div classNameName="blog-single">
       <div

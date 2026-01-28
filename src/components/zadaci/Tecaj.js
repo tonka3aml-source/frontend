@@ -4,9 +4,9 @@ const Tecaj = () => {
   return (
 
       <div className="container">
-      <h2>Tečajna</h2>
+      <h2>Tečajna lista</h2>
 
-      <table className="table">
+      <table className="table mt-3 mb-5">
 
   <thead>
     <tr>
@@ -26,8 +26,8 @@ const Tecaj = () => {
     <tr>
       <td>{tecaj.drzava}</td>
         <td>{tecaj.valuta}</td>
-        <td>{tecaj.kupovni}</td>
-        <td>{tecaj.srednji}</td>
+        <td>{tecaj.kupovni_tecaj}</td>
+        <td>{tecaj.srednji_tecaj}</td>
         <td>{tecaj.prodajni_tecaj}</td>
         <td>{tecaj.datum_primjene}</td>
     </tr>

@@ -15,6 +15,7 @@ import Kontakt from"./pages/Kontakt";
 import Profil from "./components/zadaci/Profil";
 import Korisnici from "./components/zadaci/Korisnici";
 import Tecaj from "./components/zadaci/Tecaj";
+import Kategorije from "./pages/Kategorije";
 
 
 function App() {
@@ -26,16 +27,16 @@ function App() {
         <Route path="/onama" element={<Onama />} />
         <Route path="/proizvodi" element={<Proizvodi />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="blogsingle" element={<BlogSingle />} />
+        <Route path="blog/:slug" element={<BlogSingle />} />
         <Route path="/kosarica" element={<Kosarica />} />
         <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/kategorije" element={<Kategorije />} />
+    
 
 
       <Route path="/profil" element= {<Profil />} />
       <Route path="/korisnici" element= {<Korisnici />} />
       <Route path="/tecaj" element= {<Tecaj />} />
-
-
 
       </Routes>
       <Footer />
