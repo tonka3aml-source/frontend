@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import Loader from "../pages/Loader";
+import Loader from "./Loader";
 
-const Kontakt = () => {
+const Onama = () => {
   const [page, setPage] = useState(null);
 
   useEffect(() => {
-    fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/pages/443`)
+    fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/pages/437`)
       .then((response) => response.json())
       .then((data) => {
         setPage(data);
@@ -19,4 +19,4 @@ const Kontakt = () => {
   );
 };
 
-export default Kontakt;
+export default Onama;

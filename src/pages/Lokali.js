@@ -3,40 +3,26 @@ import { Link } from "react-router-dom";
 import Loader from "../pages/Loader";
 import "./Blog.css";
 
-const Blog = () => {
+const Lokali = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
 
-  const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-
-  const [authors, setAuthors] = useState([]);
-  const [selectedAuthor, setSelectedAuthor] = useState("");
+  const [djelatnosti, setDjelatnosti] = useState([]);
+  const [izabranaDjelatnost, setIzabranaDjelatnost] = useState("");
 
   useEffect(() => {
-    fetch("https://front2.edukacija.online/backend/wp-json/wp/v2/categories")
+    fetch("https://front2.edukacija.online/backend/wp-json/wp/v2/djelatnost")
       .then((response) => response.json())
-      .then((data) => {
-        setCategories(data);
-      });
-
-    fetch(
-      "https://front2.edukacija.online/backend/wp-json/wp/v2/users?per_page=20",
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setAuthors(data);
-      });
+      .then((data) => setDjelatnosti(data));
   }, []);
 
   useEffect(() => {
     setLoading(true);
 
     let url =
-      "https://front2.edukacija.online/backend/wp-json/wp/v2/posts?_embed";
-
-    if (selectedCategory) url += "&categories=" + selectedCategory;
-    if (selectedAuthor) url += "&author=" + selectedAuthor;
+      "https://front2.edukacija.online/backend/wp-json/wp/v2/lokal?_embed";
+    if (izabranaDjelatnost) url += "&djelatnost=" + izabranaDjelatnost;
 
     fetch(url)
       .then((response) => response.json())
@@ -44,41 +30,30 @@ const Blog = () => {
         setPosts(data);
       })
       .finally(() => setLoading(false));
-  }, [selectedCategory, selectedAuthor]);
+  }, [izabranaDjelatnost]);
 
   return (
     <>
       {loading && <Loader />}
       <div className="blog-page">
         <div className="container">
-          <h1>Blog</h1>
-
-          <div className="row mb-4 mt-5">
-            <div class="col-12">
-              {categories.map((category) => (
-                <button
-                  className="btn btn-primary"
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                >
-                  {category.name}
-                </button>
-              ))}
+          <h1>Lokali</h1>
+          <div className="row mb-4">
+            <div className="col-6">
+              <select
+                className="form-select"
+                value={izabranaDjelatnost}
+                onChange={(e) => setIzabranaDjelatnost(e.target.value)}
+              >
+                <option value="">Sve djelatnosti</option>
+                {djelatnosti.map((djelatnost) => (
+                  <option key={djelatnost.id} value={djelatnost.id}>
+                    {djelatnost.name}
+                  </option>
+                ))}
+              </select>
             </div>
-
-            <select
-              className="form-select"
-              onChange={(e) => setSelectedAuthor(e.target.value)}
-            >
-              <option value="">Svi autori</option>
-              {authors.map((author) => (
-                <option key={author.id} value={author.id}>
-                  {author.name}
-                </option>
-              ))}
-            </select>
           </div>
-
           <div className="row">
             {posts.map((post) => {
               const image =
@@ -88,7 +63,7 @@ const Blog = () => {
               return (
                 <div key={post.id} className="col-md-4 mb-4 blog-post">
                   {image && (
-                    <Link to={"/blog/" + post.slug}>
+                    <Link to={"/lokal/" + post.slug}>
                       <img
                         src={image}
                         className="mb-3"
@@ -96,10 +71,10 @@ const Blog = () => {
                       />
                     </Link>
                   )}
-
-                  <Link to={"/blog/" + post.slug}>
+                  <Link to={"/lokal/" + post.slug}>
                     <h2>{post.title.rendered}</h2>
                   </Link>
+
                   <div
                     dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
                   />
@@ -121,4 +96,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Lokali;
