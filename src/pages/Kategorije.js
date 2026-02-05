@@ -38,12 +38,18 @@ const Kategorije = () => {
       <div className="container blog-page">
         <div className="row">
           <div className="col-12 d-flex justify-content-center mt-5">
-            <select value={selectedCategory} onChange={handleCattegoryChange}>
+            <select
+              className="form-select"
+              value={selectedCategory}
+              onChange={handleCattegoryChange}
+            >
               <option value="" disabled>
                 Oodaberite kategoriju
               </option>
               {categoryes.map((cat) => (
-                <option key={cat.id} value={cat.id}>{cat.name}</option>
+                <option key={cat.id} value={cat.id}>
+                  {cat.name}
+                </option>
               ))}
             </select>
           </div>

@@ -1,21 +1,110 @@
-import { useState, useEffect } from "react";
-import Loader from "../pages/Loader";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import "./kontakt.css";
+import {
+  faInstagram,
+  faLinkedin,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Kontakt = () => {
-  const [page, setPage] = useState(null);
+  const form = useRef();
+  const [isSent, setIsSent] = useState(false);
 
-  useEffect(() => {
-    fetch(`https://front2.edukacija.online/backend/wp-json/wp/v2/pages/443`)
-      .then((response) => response.json())
-      .then((data) => {
-        setPage(data);
-        console.log(data);
-      });
-  }, []);
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  if (!page) return <Loader />;
+    emailjs
+      .sendForm("service_ywfs7ov", "template_u6rhlqt", form.current, {
+        publicKey: "sWmVBMsNRnZsk1ijB",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setIsSent(true);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        },
+      );
+  };
+
   return (
-    <div dangerouslySetInnerHTML={{ __html: page.content.rendered }}></div>
+    <>
+      <section id="contact">
+        <div className="container">
+          <div className="row my-4">
+            <h1 className="text-center mt-3">Kontakt</h1>
+            <p className="text-center">
+              Imate li pitanje ili komentar? Pišite nam!
+            </p>
+            <div className="col-md-4 contact-left">
+              <div className="circle1"></div>
+              <div className="circle2"></div>
+              <div>
+                <h2>Kontakt informacije</h2>
+                <p>Upišite riječ za pokretanje chata!</p>
+              </div>
+              <div className="contact-info">
+                <a href="" className="d-flex gap-4 align-items-start">
+                  <FontAwesomeIcon icon={faPhone} className="pt-1" /> +1012 3456
+                  789{" "}
+                </a>
+                <a href="" className="d-flex gap-4 align-items-start">
+                  <FontAwesomeIcon icon={faEnvelope} className="pt-1" />{" "}
+                  demo@gmail.com{" "}
+                </a>
+                <a href="" className="d-flex gap-4 align-items-start">
+                  <FontAwesomeIcon icon={faLocationDot} className="pt-1" /> 132
+                  Dartmouth Street Boston, Massachusetts 02156 United
+                  States{" "}
+                </a>
+              </div>
+              <div className="socials">
+                <a href="www.x.com">
+                  <FontAwesomeIcon icon={faXTwitter} />
+                </a>
+                <a href="www.instagram.com">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="www.linkedin.com">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </div>
+            </div>
+
+            <div className="col-md-8 contact-right">
+              <div className="d-flex flex-column contact-inputs">
+                <form
+                  ref={form}
+                  onSubmit={sendEmail}
+                  className="d-flex flex-column"
+                >
+                  <label>Ime i prezime</label>
+                  <input type="text" name="user_name" className="inputform" />
+                  <label>Email</label>
+                  <input type="email" name="user_email" className="inputform" />
+                  <label>Poruka</label>
+                  <textarea rows={2} name="message" className="inputform" />
+                  <button
+                    type="submit"
+                    value="Send"
+                    className="contact-button mt-5"
+                    disabled={isSent}
+                  >
+                    {isSent ? "Poruka poslana" : "Pošalji poruku"}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

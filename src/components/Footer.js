@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollToTop from "./ScrollToTop";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,28 +13,28 @@ const Footer = () => {
                 <h4>Explorer</h4>
                 <ul>
                   <li>
-                    <a href="#">Electric bikes</a>
+                    <Link to="#">Electric bikes</Link>
                   </li>
                   <li>
-                    <a href="#">City bikes</a>
+                    <Link to="#">City bikes</Link>
                   </li>
                   <li>
-                    <a href="#">Kid's bikes</a>
+                    <Link to="#">Kid's bikes</Link>
                   </li>
                   <li>
-                    <a href="#">Accessories</a>
+                    <Link to="#">Accessories</Link>
                   </li>
                   <li>
-                    <a href="#">Outlet</a>
+                    <Link to="#">Outlet</Link>
                   </li>
                   <li>
-                    <a href="#">Business</a>
+                    <Link to="#">Business</Link>
                   </li>
                   <li>
-                    <a href="#">Insurance Electric</a>
+                    <Link to="#">Insurance Electric</Link>
                   </li>
                   <li>
-                    <a href="#">Size Guide</a>
+                    <Link to="#">Size Guide</Link>
                   </li>
                 </ul>
               </div>
@@ -41,19 +42,19 @@ const Footer = () => {
                 <h4>About</h4>
                 <ul>
                   <li>
-                    <a href="#">About us</a>
+                    <Link to="#">About us</Link>
                   </li>
                   <li>
-                    <a href="#">Journal</a>
+                    <Link to="#">Journal</Link>
                   </li>
                   <li>
-                    <a href="#">Reviews</a>
+                    <Link to="#">Reviews</Link>
                   </li>
                   <li>
-                    <a href="#">Press</a>
+                    <Link to="#">Press</Link>
                   </li>
                   <li>
-                    <a href="#">Jobs</a>
+                    <Link to="#">Jobs</Link>
                   </li>
                 </ul>
               </div>
@@ -61,25 +62,25 @@ const Footer = () => {
                 <h4>Help</h4>
                 <ul>
                   <li>
-                    <a href="#">Contact</a>
+                    <Link to="#">Contact</Link>
                   </li>
                   <li>
-                    <a href="#">FAQ</a>
+                    <Link to="#">FAQ</Link>
                   </li>
                   <li>
-                    <a href="#">Delivery</a>
+                    <Link to="#">Delivery</Link>
                   </li>
                   <li>
-                    <a href="#">Assembly & manuals</a>
+                    <Link to="#">Assembly & manuals</Link>
                   </li>
                   <li>
-                    <a href="#">Payment options</a>
+                    <Link to="#">Payment options</Link>
                   </li>
                   <li>
-                    <a href="#">Privacy policy</a>
+                    <Link to="#">Privacy policy</Link>
                   </li>
                   <li>
-                    <a href="#">Terms & conditions</a>
+                    <Link to="#">Terms & conditions</Link>
                   </li>
                 </ul>
               </div>

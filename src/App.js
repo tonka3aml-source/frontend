@@ -18,6 +18,7 @@ import Tecaj from "./components/zadaci/Tecaj";
 import Kategorije from "./pages/Kategorije";
 import Lokali from "./pages/Lokali";
 import LokaliSingle from "./pages/LokaliSingle";
+import SignIn from "./pages/Signin";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profil" element={<Profil />} />
         <Route path="/korisnici" element={<Korisnici />} />
         <Route path="/tecaj" element={<Tecaj />} />
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
       <Footer />
     </BrowserRouter>
