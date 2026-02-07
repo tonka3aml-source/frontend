@@ -14,21 +14,41 @@ import {
 const Kontakt = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_ywfs7ov", "template_u6rhlqt", form.current, {
-        publicKey: "sWmVBMsNRnZsk1ijB",
+      .sendForm("service_posswee", "template_yhucekw", form.current, {
+        publicKey: "2EARfKPz1fCUV2Llk",
       })
+
       .then(
         () => {
           console.log("SUCCESS!");
           setIsSent(true);
+          setIsError(false);
+
+          form.current.reset();
+
+          setTimeout(() => {
+            setIsSent(false);
+            setIsError(false);
+          }, 3000);
         },
+
         (error) => {
           console.log("FAILED...", error.text);
+          setIsError(true);
+          setIsSent(false);
+
+          form.current.reset();
+
+          setTimeout(() => {
+            setIsError(false);
+            setIsSent(false);
+          }, 3000);
         },
       );
   };
@@ -92,11 +112,14 @@ const Kontakt = () => {
                   <textarea rows={2} name="message" className="inputform" />
                   <button
                     type="submit"
-                    value="Send"
-                    className="contact-button mt-5"
+                    className={`contact-button mt-5 ${isSent ? "sent" : ""} ${isError ? "error" : ""}`}
                     disabled={isSent}
                   >
-                    {isSent ? "Poruka poslana" : "Pošalji poruku"}
+                    {isSent
+                      ? "Poruka poslana"
+                      : isError
+                        ? "Poruka nije poslana"
+                        : "Pošalji poruku"}
                   </button>
                 </form>
               </div>

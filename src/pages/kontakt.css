@@ -129,6 +129,22 @@
   }
 }
 
+.contact-button.sent {
+  background-color: #28a745;
+  border: 2px solid #021406;
+  color: white;
+  transition: 0.3s ease;
+  .contact-button {
+    transition: 0.3s ease;
+  }
+}
+
+.contact-button.error {
+  background-color: red;
+  border: 2px solid rgb(4, 0, 0);
+  color: white;
+}
+
 @media (max-width: 768px) {
   .contact-right {
     gap: 30px;
