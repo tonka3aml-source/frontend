@@ -1,8 +1,15 @@
 import React from "react";
 import ScrollToTop from "./ScrollToTop";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/signin") {
+    return;
+  }
+
   return (
     <footer>
       <div className="container">

@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Nav = () => {
+  const location = useLocation();
+
+  if (location.pathname === "/signin") {
+    return;
+  }
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container ">
         <img src="img/favicon-max.png" width="60px" alt="" />
 
-        <Link to="/" className="navbar-brand"> MAXIMALNO ULJE - Snaga iz zemlje</Link>
+        <Link to="/" className="navbar-brand">
+          {" "}
+          MAXIMALNO ULJE - Snaga iz zemlje
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -46,6 +55,20 @@ const Nav = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/kontakt">
                 Kontakt
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signin" title="Sign in">
+                <img
+                  src="img/header/user.svg"
+                  alt="Sign in"
+                  className="icon-sm"
+                />
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/cart" title="Cart">
+                <img src="img/header/cart.svg" alt="Cart" className="icon-lg" />
               </Link>
             </li>
           </ul>

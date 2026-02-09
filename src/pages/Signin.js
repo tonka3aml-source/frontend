@@ -60,36 +60,37 @@ const SignIn = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="d-none d-md-flex col-md-6 profile-left">
-          <h1>ENJOY THE</h1>
+        <div className="d-none d-md-flex col-md-6 profile-left text-center">
+          <img src="img/favicon-max.png" width="60px" alt="" />
+          <h1>Zlatna kap</h1>
+          <h1>MAKSIMALNO ULJE</h1>
           <img src="/img/header/logo_light.svg" alt="" />
         </div>
         <div className="col-md-6 profile-right">
-          <h2>Welcome back</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
+          <h2>Dobro došli</h2>
           <form onSubmit={handleLogin} className="signin-form">
-            <label htmlFor="">Username</label>
+            <label htmlFor="">Korisničko ime</label>
             <input
               type="text"
               name="username"
               value={form.username}
               onChange={handleChange}
             />
-            <label htmlFor="">Password</label>
+            <label htmlFor="">Lozinka</label>
             <input
               type="password"
               name="password"
               value={form.password}
               onChange={handleChange}
             />
-            <a href="#">Forgot password?</a>
-            <button type="submit">Log in</button>
+            <a href="#">Zaboravljena lozinka?</a>
+            <button type="submit">Prijava</button>
             <p>{error}</p>
           </form>
 
-          <p className="text-center breakline">or</p>
+          <p className="text-center breakline">ili</p>
           <p>
-            Don't have an account? <Link>Sign Up</Link>
+            Imate li račun? <Link>Registrirajte se</Link>
           </p>
         </div>
       </div>
