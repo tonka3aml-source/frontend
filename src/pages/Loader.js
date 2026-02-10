@@ -19,13 +19,11 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #181805, #828230);
-position: fixed;
-top: 0;
-left: 0;
-z-index: 9999;
-
-
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 
   .loader {
     position: relative;
@@ -38,7 +36,7 @@ z-index: 9999;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    animation: drop 2.4s cubic-bezier(.22,.61,.36,1) infinite;
+    animation: drop 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
     filter: drop-shadow(0 0 30px rgba(255, 220, 120, 0.9));
   }
 
@@ -63,7 +61,7 @@ z-index: 9999;
 
     55% {
       top: 70px;
-      transform: translateX(-50%) scale(1.08, 0.85);    /* razlije se 
+      transform: translateX(-50%) scale(1.08, 0.85); /* razlije se 
     }
 
     68% {
@@ -104,6 +102,5 @@ z-index: 9999;
     }
   }
 `;
-
 
 export default Loader;

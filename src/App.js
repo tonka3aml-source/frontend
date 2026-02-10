@@ -19,6 +19,7 @@ import Kategorije from "./pages/Kategorije";
 import Lokali from "./pages/Lokali";
 import LokaliSingle from "./pages/LokaliSingle";
 import SignIn from "./pages/Signin";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
         <Route path="/korisnici" element={<Korisnici />} />
         <Route path="/tecaj" element={<Tecaj />} />
         <Route path="/signin" element={<SignIn />} />
+
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </BrowserRouter>

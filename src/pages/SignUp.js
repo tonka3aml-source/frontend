@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./signin.css";
 import { useEffect, useState } from "react";
 
-const SignIn = () => {
+const SignUp = () => {
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
@@ -11,9 +11,10 @@ const SignIn = () => {
   const [form, setForm] = useState({
     username: "",
     password: "",
+    email: "",
   });
 
-  //ako je korisnik već prijavljen - redirecta na home
+  // Ako je korisnik već prijavljen → redirect na home
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -28,40 +29,30 @@ const SignIn = () => {
     });
   };
 
-  console.log(form);
-
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
     try {
       const response = await fetch(
-        "https://front2.edukacija.online/backend/wp-json/jwt-auth/v1/token",
+        "https://front2.edukacija.online/backend/wp-json/wp/v2/users/register",
         {
           method: "POST",
-          headers: { "Content-type": "application/json" },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(form),
         },
       );
 
       const data = await response.json();
-
       setLoading(false);
 
-      console.log(data);
-
       if (data?.code) {
-        setError("Pogrešan mail ili lozinka");
+        setError("Wrong Email or password");
         return;
       }
 
-      //spremanje tokena
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("username", data.user_display_name);
-
       //redirect nakon uspješne prijave
-      navigate("/", { replace: true });
+      navigate("/signin", { replace: true });
 
       window.location.reload();
     } catch (error) {
@@ -82,12 +73,21 @@ const SignIn = () => {
         </div>
         <div className="col-md-6 profile-right">
           <h2>Dobro došli</h2>
-          <form onSubmit={handleLogin} className="signin-form">
-            <label htmlFor="">Korisničko ime</label>
+
+          <form onSubmit={handleRegister} className="signin-form">
+            <label>Korisničko ime</label>
             <input
               type="text"
               name="username"
               value={form.username}
+              onChange={handleChange}
+            />
+
+            <label>E-mail address</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
               onChange={handleChange}
             />
             <label htmlFor="">Lozinka</label>
@@ -97,10 +97,8 @@ const SignIn = () => {
               value={form.password}
               onChange={handleChange}
             />
-            <a href="#">Zaboravljena lozinka?</a>
-
             <button type="submit" disabled={loading}>
-              {loading ? "Prijavljivanje..." : "Prijava"}
+              {loading ? "Registracija..." : "Registriraj se"}
             </button>
 
             {error && <p className="error">{error}</p>}
@@ -116,4 +114,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
