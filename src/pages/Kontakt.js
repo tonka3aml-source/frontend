@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Link } from "react-router-dom";
 import Loader from "./Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -70,19 +71,19 @@ const Kontakt = () => {
                 <p>Upišite riječ za pokretanje chata!</p>
               </div>
               <div className="contact-info">
-                <a href="" className="d-flex gap-4 align-items-start">
+                <Link to="" className="d-flex gap-4 align-items-start">
                   <FontAwesomeIcon icon={faPhone} className="pt-1" /> +1012 3456
                   789{" "}
-                </a>
-                <a href="" className="d-flex gap-4 align-items-start">
+                </Link>
+                <Link to="" className="d-flex gap-4 align-items-start">
                   <FontAwesomeIcon icon={faEnvelope} className="pt-1" />{" "}
                   demo@gmail.com{" "}
-                </a>
-                <a href="" className="d-flex gap-4 align-items-start">
+                </Link>
+                <Link to="" className="d-flex gap-4 align-items-start">
                   <FontAwesomeIcon icon={faLocationDot} className="pt-1" /> 132
                   Dartmouth Street Boston, Massachusetts 02156 United
                   States{" "}
-                </a>
+                </Link>
               </div>
               <div className="socials">
                 <a href="www.x.com">

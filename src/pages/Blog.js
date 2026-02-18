@@ -4,6 +4,7 @@ import Loader from "../pages/Loader";
 import "./Blog.css";
 import ReactPaginate from "react-paginate";
 import ScrollToTop from "../components/ScrollToTop";
+import BlogPost from "../components/BlogPost";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -91,12 +92,12 @@ const Blog = () => {
 
           <div className="row">
             {posts.map((post) => {
-              const image =
+              /*  const image =
                 post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes
-                  ?.full?.source_url;
+                  ?.full?.source_url;  */
 
               return (
-                <div key={post.id} className="col-md-4 mb-4 blog-post">
+                /*  <div key={post.id} className="col-md-4 mb-4 blog-post">
                   {image && (
                     <Link to={"/blog/" + post.slug}>
                       <img
@@ -121,10 +122,13 @@ const Blog = () => {
                       minute: "2-digit",
                     })}
                   </p>
-                </div>
+                </div>   */
+
+                <BlogPost key={post.id} post={post} />
               );
             })}
           </div>
+
           <ReactPaginate
             previousLabel={"prethodna"}
             nextLabel={"→slijedeća"}

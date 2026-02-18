@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
-
 :root {
   --primary-color: #141615;
   --white: #fff;
@@ -386,6 +385,7 @@ footer a {
   margin-top: 0;
   color: #6c757d;
 }
+
 .post-preview > .post-meta > a {
   text-decoration: none;
 }
